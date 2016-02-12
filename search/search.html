@@ -20,7 +20,9 @@
 </body>
 <script>
     $(function(){
-        $("#btn").click(function(){
+        $("#btn").click(function()
+        var doll=/^[1-9]{1,}\.\d{2}$|^[0]\.\d{2}$/;//人民币正则
+        alert(doll.test("11.22"))
             $("span[class='red']").each(function(){
                 var text=$(this).text()
                 $(this).replaceWith(text)
