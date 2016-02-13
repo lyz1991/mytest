@@ -14,16 +14,17 @@
 <button id="btn">开始</button>
 <div id="container">
     <p>我的测试2331122221</p>
-    <div style="background-color: yellow">我的测试1</div>
+    <div style="background-color: yellow">我的测试sing and dacing</div>
 
 </div>
 </body>
 <script>
     $(function(){
-        $("#btn").click(function()
-        var doll=/^[1-9]{1,}\.\d{2}$|^[0]\.\d{2}$/;//人民币正则
-        alert(doll.test("11.22"))
-            $("span[class='red']").each(function(){
+        $("#btn").click(function(){
+        var doll=/^[1-9]+\.\d{2}$|^[0]\.\d{2}$/;
+        var img=/\w+(?=ing)/g;
+        alert(doll.test("11.23"))
+        $("span[class='red']").each(function(){
                 var text=$(this).text()
                 $(this).replaceWith(text)
             })
@@ -34,6 +35,8 @@
                 var req=new RegExp(val,"g");//input里面变量正则
                 var html=$("#container").html().replace(req,"<span class='red'>"+val+"</span>");
                 $("#container").html(html)
+                var tpl=$("#container").html().replace(img,"断言测试");
+                $("#container").html(tpl)
             }
 
         })
