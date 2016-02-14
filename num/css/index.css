@@ -1,0 +1,107 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.am-padding{
+    padding: 0;
+}
+.title{
+    color:#6e6e6e;
+    margin-left: 10px;
+}
+.content,.content-foot{
+    position: relative;
+    padding-top: 10px;
+    color: #d4d4d4;
+
+}
+.content{
+    padding-bottom: 10px;
+    height: 80px;
+    line-height: 80px;
+    background-color: black;
+}
+.content-foot{
+
+    font-size: 14px;
+    font-weight: 500;
+}
+.dallor-footer,.dallor-active{
+    position: absolute;
+    right: 10px;
+}
+.dallor{
+    float: right;
+    font-size:18px;
+}
+.dallor span{
+    font-size:24px;
+}
+.dallor-footer{
+    font-size: 14px;
+    top: 13px;
+}
+.detail{
+    color: white;
+}
+.dallor-active{
+    color: #555555;
+    font-size: 1.6rem;
+}
+.int{
+    color: #da7b5d;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+.float{
+    color: #da7b5d;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.footer{
+    padding: 0;
+}
+.footer-item{
+    background-color:#ffffff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-top:1px solid #cbcbcb ;
+    border-right: 1px solid #cbcbcb;
+    box-sizing: border-box;
+    padding-top: 15px;
+    padding-left: 15px;
+
+}
+
+
+p{
+    margin: 0;
+}
+.weixin{
+    height:150px;
+    padding-top: 60px;
+    box-sizing: border-box;
+}
+.footer-footer{
+    width: 100%;
+    background: url("../images/dibu.png") no-repeat;
+    background-size: 100%;
+    background-position: 0 65%;
+    position: fixed;
+    bottom: 0;
+
+}
+#str,.weixin,.null{
+    background-color: #f8f8f8;
+
+}
+#str,#cancel,.weixin{
+    padding-top: 5px;
+    text-align: right;
+    padding-right: 10px;
+    font-weight: 400;
+    color:#d3d3d3;
+}
+.weixin{
+    border-top: 0;
+}

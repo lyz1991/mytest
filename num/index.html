@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="demo">
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta content="telephone=no" name="format-detection" />
+    <title></title>
+    <link rel="stylesheet" href="css/amazeui.min.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <script src="js/zepto.min.js"></script>
+<script src="js/zepto.touch.min.js"></script>
+
+    <script src="js/main.js"></script>
+</head>
+<body style="background-color:#f7f7f7">
+<div style="background-color: white;">
+
+
+<div class="am-u-sm-12 am-u-sm-centered am-padding content" id="dallor">
+    <div class="dallor">￥<span class="detail" id="detail"></span>&nbsp;</div>
+</div>
+<div class="am-u-sm-11 am-u-sm-centered content-foot">
+    共使用优惠券<span>1</span>张，金额<span>500</span>元
+</div>
+
+</div>
+<div class="am-u-sm-12 footer">
+<div class="am-u-sm-3 footer-item num">7</div>
+    <div class="am-u-sm-3 footer-item num">8</div>
+    <div class="am-u-sm-3 footer-item num">9</div>
+    <div class="am-u-sm-3 footer-item" id="cancel"><i class="iconfont-cancel">&#xe613;</i></div>
+
+
+
+    <div class="am-u-sm-3 footer-item am-padding num">4</div>
+    <div class="am-u-sm-3 footer-item am-padding num">5</div>
+    <div class="am-u-sm-3 footer-item am-padding num">6</div>
+    <div class="am-u-sm-3 footer-item am-padding" id="str"><i class="iconfont">&#xe608;</i> <p>生成</p><p>收银码</p></div>
+
+        <div class="am-u-sm-3 footer-item am-padding num">1</div>
+        <div class="am-u-sm-3 footer-item am-padding num">2</div>
+        <div class="am-u-sm-3 footer-item am-padding num">3</div>
+        <div class="am-u-sm-3 footer-item am-padding null" id="null" ></div>
+        <div class="am-u-sm-3 footer-item am-padding num" >0</div>
+        <div class="am-u-sm-3 footer-item am-padding null" style="background-color: white"></div>
+        <div class="am-u-sm-3 footer-item am-padding num">.</div>
+
+    <div class="am-u-sm-3 footer-item weixin"><i class="iconfont">&#xe647;</i> <p>扫码</p><p>收银</p></div>
+</div>
+<footer class="footer-footer"></footer>
+</body>
+<script>
+    $(function(){
+        option.init();
+
+    })
+</script>
+</html>
