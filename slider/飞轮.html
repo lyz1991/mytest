@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="js/jquery.min.js"></script>
+    <title></title>
+    <style>
+        body{
+            background-color: black;
+            cursor: pointer;
+        }
+        .container{
+            position: relative;
+            width: 300px;
+            height: 450px;
+            margin: 250px auto;
+            text-align: center;
+            transform-style: preserve-3d;
+            transform:  perspective(800px);
+            transition: all 2s;
+        }
+       .container img{
+            width: 100px;
+            height: 150px;
+            position: absolute;
+            top: 0;
+            transition: all 2s;
+        }
+#outer{
+    width: 100px;
+    height: 150px;
+    margin-left: 100px;
+    margin-top: 20px;
+    transform-style: preserve-3d;
+    transform:  perspective(800px);
+    -webkit-transform-origin: 100% 50%;
+    transition: all 2s linear;
+}
+        img:nth-of-type(10){
+            transition: all 2s linear;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div id="outer">
+    <img src="img/扬州.jpg" alt="青面兽杨志">
+    <img src="img/董平.jpg" alt="双枪将董平">
+    <img src="img/鲁智深.jpg" alt="花和尚鲁智深">
+    <img src="img/秦明.jpg" alt="霹雳火秦明">
+    <img src="img/关胜.jpg" alt="大刀关胜">
+    <img src="img/林冲.jpg" alt="豹子头林冲">
+    <img src="img/呼延灼.jpg" alt="双鞭呼延灼">
+    <img src="img/武松.jpg" alt="行者武松">
+    <img src="img/徐宁.jpg" alt="金枪手徐宁">
+    <img src="img/索超.jpg" alt="急先锋索超">
+        </div>
+    <img src="img/宋江.jpg" alt="呼保义宋江" id="sj">
+</div>
+
+
+</body>
+<script>
+    window.onload=function() {
+        var len = $("img").length - 1;
+        var mid = Math.floor(len / 2);
+        var d=0;
+        var w=0
+        var width = $(window).width();
+        var deg=360/($('img').length-1);
+
+        for (var i = 0; i < len; i++) {
+            $('img').eq(i).css('transform','rotateZ('+i*deg+'deg) translateY(250px)')
+        }
+        function my(){
+            d+=30;
+            w+=20
+            $("#outer").css('transform','rotateZ('+d+'deg)');
+            $('img').eq(10).css('transform','rotateZ('+w+'deg)')
+        };
+        setInterval(my,1000)
+
+
+    }
+
+
+
+
+
+</script>
+</html>

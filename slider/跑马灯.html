@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery.min.js"></script>
+
+    <style>
+        body{
+            background-color: black;
+            cursor: pointer;
+        }
+        .wap{
+            width: 800px;
+            margin: 100px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .container{
+            position: relative;
+            width: 8000000px;
+            overflow: hidden;
+            height: auto;
+
+        }
+        .container img{
+            width: 200px;
+            height: 300px;
+            margin-left: 50px;
+            float: left;
+            -webkit-box-reflect: below 0 -webkit-linear-gradient(transparent,transparent ,rgba(255,255,255,.7));;
+        }
+    </style>
+</head>
+<body>
+<div class="wap">
+
+    <div class="container">
+
+        <img src="img/扬州.jpg" alt="青面兽杨志">
+        <img src="img/董平.jpg" alt="双枪将董平">
+        <img src="img/鲁智深.jpg" alt="花和尚鲁智深">
+        <img src="img/秦明.jpg" alt="霹雳火秦明">
+        <img src="img/关胜.jpg" alt="大刀关胜">
+        <img src="img/宋江.jpg" alt="呼保义宋江">
+        <img src="img/林冲.jpg" alt="豹子头林冲">
+        <img src="img/呼延灼.jpg" alt="双鞭呼延灼">
+        <img src="img/武松.jpg" alt="行者武松">
+        <img src="img/徐宁.jpg" alt="金枪手徐宁">
+        <img src="img/索超.jpg" alt="急先锋索超">
+        <img src="img/扬州.jpg" alt="青面兽杨志">
+        <img src="img/董平.jpg" alt="双枪将董平">
+        <img src="img/鲁智深.jpg" alt="花和尚鲁智深">
+    </div>
+    <buttom id="go" style="color: white;position: absolute;bottom: 55%;right: 0">下一张</buttom>
+    <buttom id="prev" style="color: white;position: absolute;bottom: 55%;left: 0">上一张</buttom>
+</div>
+</body>
+<script>
+    function my(){
+        var num=0;
+        var oneleft=parseInt($("img").css("margin-left"))+$("img").width();
+        //$("img").eq(0).clone().appendTo($(".container"));
+        $("#go").click(function(){
+
+                num++;
+
+            if(num>11){
+                $(".container").css("left",0);
+                num=1
+            }
+
+                bull=false
+                $(".container").stop().animate({left:-num*oneleft+"px"});
+                bull=true
+
+
+
+
+        })
+        $("#prev").click(function(){
+            num--;
+            if(num<0){
+                $(".container").css("left",-oneleft*11+"px");
+                num=10
+            }
+
+                $(".container").stop().animate({left:-num*oneleft+"px"});
+
+
+        })
+        function auto(){
+            $("#go").trigger("click")
+        }
+       var timer=setInterval(auto,2000);
+        $("#go,#prev,img").hover(function(){
+            clearInterval(timer)
+        },function(){
+            timer=setInterval(auto,2000);
+        })
+    }
+    my()
+  /*  $("img").myswiper({
+        obj:"img",
+        len:null,
+        time:2000,
+        type:1,
+        prev:"#prev",
+        next:"#go",
+        num:0,
+        wap:null,
+        container:".container"
+    })*/
+</script>
+</html>

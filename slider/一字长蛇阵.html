@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="js/jquery.min.js"></script>
+    <style>
+        body{
+            background-color: black;
+            cursor: pointer;
+        }
+
+        .container{
+            position: relative;
+            width: 100%;
+            height: 450px;
+            margin: 100px auto;
+            transform-style: preserve-3d;
+            transform:  perspective(800px);
+            transition: all 2s;
+        }
+        .container img{
+            width: 200px;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            -webkit-box-reflect: below 0 -webkit-linear-gradient(transparent,transparent ,rgba(255,255,255,.7));;
+
+        }
+        #title{
+            width: 300px;
+            height: 50px;
+            margin:  -250px auto;
+            display: none;
+            font-size: 2rem;
+            color: red;
+            text-align:left;
+            line-height: 50px;
+        }
+        .now{
+            transform: translateZ(100px);
+        }
+        .before{
+            transform: translateZ(-100px) rotateY(45deg);
+        }
+        .black{
+            transform: translateZ(-100px) rotateY(-45deg);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="img/扬州.jpg" alt="青面兽杨志">
+
+        <img src="img/董平.jpg" alt="双枪将董平">
+        <img src="img/鲁智深.jpg" alt="花和尚鲁智深">
+        <img src="img/秦明.jpg" alt="霹雳火秦明">
+        <img src="img/关胜.jpg" alt="大刀关胜">
+        <img src="img/宋江.jpg" alt="呼保义宋江">
+        <img src="img/林冲.jpg" alt="豹子头林冲">
+        <img src="img/呼延灼.jpg" alt="双鞭呼延灼">
+        <img src="img/武松.jpg" alt="行者武松">
+        <img src="img/徐宁.jpg" alt="金枪手徐宁">
+        <img src="img/索超.jpg" alt="急先锋索超">
+    </div>
+
+</body>
+<script>
+window.onload=function(){
+   var len=$("img").length;
+    var mid=Math.floor(len/2);
+    var width=$(window).width()
+    for(var i=0;i<len;i++){
+        if(i>mid){
+            $("img").eq(i).addClass("black")
+        }
+        else if(i<mid){
+            $("img").eq(i).addClass("before")
+        }
+        else{
+            $("img").eq(i).addClass("now")
+        }
+
+
+    }
+   function midd(){
+
+       $("img").css({left:width/2-100+"px"});
+       for(var i=0;i<len;i++){
+          $("img").eq(i).css({left:width/2-100-120*(5-i)+"px"})
+       }
+
+   }
+    midd()
+
+}
+</script>
+</html>
