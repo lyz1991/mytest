@@ -1,0 +1,41 @@
+.am-header-default{
+    background-color:#07a0dc;
+}
+.headposition{
+    position: fixed;
+    top: 0;
+}
+
+.itemtop,.item{
+    width: 14.286%;
+    color: black;
+    float: left;
+    text-align: center;
+    background-color: #f7f7f7;
+    padding: 5px 0;
+    border-bottom: 1px solid #d9d9d9;
+}
+.itemtop:first-of-type,.weekend{
+    color: #ce996d;
+}
+.itemtop:nth-of-type(7){
+    color: #ce996d;
+}
+.item{
+    border:0;
+    background-color: white;
+    font-size: 1.4rem;
+}
+.year{
+    width: 100%;
+    text-align: center;
+    color: black;
+    font-weight: 700;
+}
+#first,#second{
+    overflow: hidden;
+}
+.before{
+    cursor: not-allowed;
+    color: #dddddd;
+}
