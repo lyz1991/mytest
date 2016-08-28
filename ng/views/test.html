@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="demo">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../lib/angular.min.js"></script>
+</head>
+<body ng-controller="my as tes">
+
+<input type="text" ng-model="text" ng-model-options="{updateOn:'default focus',debounce:{'default':3000,'focus':3000}}" >
+<p>{{text}}</p>
+</body>
+<script>
+    var app=angular.module("demo",[]);
+    app.controller("my",["$scope",function($scope){
+        $scope.text=123;
+        $scope.$watch("text",function(){
+            alert(2)
+        })
+
+    }])
+</script>
+</html>

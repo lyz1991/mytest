@@ -2,11 +2,11 @@
  * Created by wxh-user on 2016/3/15.
  */
 (function($){
-    if(typeof jQuery=="undefined"){
+    if(typeof jQuery == "undefined"){
         throw new Error("当前没有jquery")
     };
-    $.fn.pagelist=function(list){
-        var d=document;
+    $.fn.pagelist = function(list){
+        var d = document;
         var _this=this;
         var defaults={
             num:5,

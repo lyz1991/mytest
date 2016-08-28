@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html ng-app="demo">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ <script src="libs/angular.min.js"></script>
+
+</head>
+<body ng-controller="my">
+<p ng-click="check(3)">{{phone}}</p>
+
+
+</body>
+<script>
+    var app=angular.module("demo",[]);
+    app.controller("my",["$scope","$q","$test",function($scope,$q,$test){
+        $scope.phone=12;
+        $test.load3().then($test.load2).then($test.load4)
+
+
+    }])
+    app.factory("$test",["$q",function($q){
+        var test={};
+        //
+        //test.promise=defer.promise;
+        test.load4=function(){
+            console.log(44)
+        }
+        test.load2=function(){
+            var defer=$q.defer();
+            setTimeout(function(){
+                console.log(2);
+                defer.resolve(222);
+            },4000)
+            return defer.promise
+
+
+        }
+        test.load3=function(){
+            var defer=$q.defer();
+            setTimeout(function(){
+
+                console.log(3);
+                defer.resolve(333);
+
+            },2000);
+            return defer.promise
+
+        }
+        return test
+    }])
+</script>
+</html>

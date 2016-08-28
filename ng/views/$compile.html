@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html  ng-app="demo">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../lib/jquery-1.8.3.min.js"></script>
+    <script src="../lib/angular.min.js"></script>
+</head>
+<body ng-controller="my as test1">
+<!--<p ng-click="test1.go()">{{test1.value}}</p>-->
+
+<!--<div ng-controller="you as test2" style="margin-top: 500px;background-color: red;width: 200px;height: 400px" id="bom">
+
+</div>-->
+
+<append num="1">
+    </append>
+</body>
+<script>
+    var app=angular.module("demo",[])
+    app.controller("my",["$location","$anchorScroll",function($location,$anchorScroll){
+        this.value="开始";
+        this.go=function(){
+            $location.hash("bom");
+            $anchorScroll();
+        }
+
+    }])
+    app.controller("you",["$location","$anchorScroll",function($location,$anchorScroll){
+        this.html="开始";
+        this.go=function(){
+            $location.hash("bom");
+            $anchorScroll();
+        }
+
+    }])
+    app.directive("append",["$compile",function($compile){
+        return{
+            restrict:"E",
+            scope:{
+                num:"@"
+            },
+            template:"<p>{{num}}</p>",
+            link:function(scope,ele,attrs){
+                ele.bind("click",function(){
+                 var num=scope.num;
+                    num++;
+                    var html="<append num='"+num+"'>"+num+"</append>";
+                    $("body").append($compile(html)(scope))
+
+                })
+            }
+        }
+    }])
+</script>
+</html>

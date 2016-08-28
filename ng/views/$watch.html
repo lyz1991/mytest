@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="demo">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../lib/angular.min.js"></script>
+</head>
+<body ng-controller="my as tes">
+<div ng-repeat="x in items">
+    <input ng-model="x.price">
+
+</div>
+<p>{{total}}</p>
+</body>
+<script>
+    var app=angular.module("demo",[]);
+    app.controller("my",["$scope",function($scope){
+        $scope.items = [
+            {url:"./assets/images/img.png",title: '外带点心' , quantity: 2, price: 3,detail:170},
+            {url:"./assets/images/img.png",title: '外带晚餐', quantity: 2, price: 3,detail:170},
+            {url:"./assets/images/img.png",title: '外带菜品>青椒炒蛋', quantity: 2, price: 3,detail:170}
+        ];
+
+        $scope.$watch("items",function(){
+            var total=0;
+            for(var i=0;i<$scope.items.length;i++){
+                total+=+$scope.items[i].price;
+            }
+            $scope.total=total
+        },false);
+
+    }])
+</script>
+</html>

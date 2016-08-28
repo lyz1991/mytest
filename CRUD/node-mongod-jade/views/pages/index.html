@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../../jquery-1.8.3.min.js"></script>
+    <style>
+        form{
+            text-align: center;
+            margin: 40px auto;
+        }
+    </style>
+</head>
+<body>
+<form id="myform" >
+    <input type="text" name="name"><br><br><br>
+    <input type="text" name="pass"><br><br><br>
+    <input type="submit" value="提交">
+</form>
+
+</body>
+<script>
+    $(function(){
+        $("#myform").submit(function(){
+            var serlize=$(this).serialize();
+            $.post("/app/login",serlize).success(function(data){
+                if(data=="1"){
+                    alert("用户密码错误")
+
+                }
+                else{
+                    alert(2)
+                    window.location.href="http://localhost:3000/app/detail"
+                }
+            })
+            return false
+        })
+    })
+</script>
+</html>
